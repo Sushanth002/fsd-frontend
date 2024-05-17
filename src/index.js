@@ -3,13 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
 import Admin from './components/Admin';
 import AdminDashboard from './components/AdminDashboard';
 import Navbar from './components/Navbar';
-//import AdminLogin from './components/AdminLogin';
+import UserRegister from './components/user/UserRegister';
+import UserLogin from './components/user/UserLogin';
+import UserDashboard from './components/user/UserDashboard';
+import UserProtectedRoute from './components/user/UserProtectedRoute';
+import UpdateInfo from './components/user/UpdateInfo';
+import PastBookings from './components/user/PastBookings';
+import PostReview from './components/user/PostReview';
+import CurrentBookings from './components/user/CurrentBookings';
+
 
 
 
@@ -18,14 +26,6 @@ const routing = (
   <Router>
     <hr />
     <Navbar/>
-
-
-    <div style={{ textAlign: "center" }} >
-      <Link to="/">Home</Link> |
-      <Link to="/About">About Us</Link> |
-      <Link to="/Contact">Contact Us</Link> |
-      <Link to="/Admin">Admin Login</Link>
-    </div>
     <hr />
 
     <Routes>
@@ -34,6 +34,19 @@ const routing = (
       <Route path="/Contact" element={<Contact />} />
       <Route path="/Admin" element={<Admin />} />
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
+      <Route path="/user-register" element={<UserRegister />} />
+      <Route path="/user-login" element={<UserLogin />} />
+      <Route path="/user-dashboard" element={
+        <UserProtectedRoute>
+          <UserDashboard />
+        </UserProtectedRoute>
+      }>
+        {/* Nested routes */}
+        <Route path="update-info" element={<UpdateInfo />} />
+        <Route path="past-bookings" element={<PastBookings />} />
+        <Route path="current-bookings" element={<CurrentBookings />} />
+      </Route>
+      <Route path="/post-review/:bookingId" element={<PostReview />} />
 
     </Routes>
   </Router>

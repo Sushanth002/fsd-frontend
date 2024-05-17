@@ -10,21 +10,25 @@ nav {
   
   .logo {
     color: white;
-    font-size: 24px;
+    font-size: 20px;
   }
   
-  .nav-links, .nav-links-right {
+  .nav-links,
+  .nav-links-right {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center; /* Align items vertically */
   }
   
-  .nav-links li, .nav-links-right li {
+  .nav-links li,
+  .nav-links-right li {
     margin-right: 20px;
   }
   
-  .nav-links .dropdown, .nav-links-right .dropdown {
+  .nav-links .dropdown,
+  .nav-links-right .dropdown {
     position: relative;
   }
   
@@ -33,7 +37,7 @@ nav {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
   
@@ -61,3 +65,25 @@ nav {
     cursor: pointer;
   }
   
+  
+  .nav-links {
+    margin-right: auto;
+  }
+  
+
+  .contact-us,
+ .about-us {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+.login,
+ .register {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: inline-block;
+}
