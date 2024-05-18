@@ -17,6 +17,12 @@ import UpdateInfo from './components/user/UpdateInfo';
 import PastBookings from './components/user/PastBookings';
 import PostReview from './components/user/PostReview';
 import CurrentBookings from './components/user/CurrentBookings';
+import OwnerRegister from './components/hotelOwner/OwnerRegister';
+import OwnerLogin from './components/hotelOwner/OwnerLogin';
+import OwnerProtectedRoute from './components/hotelOwner/OwnerProtectedRoute';
+import OwnerDashboard from './components/hotelOwner/OwnerDashboard';
+import UpdateOwnerInfo from './components/hotelOwner/UpdateOwnerInfo';
+import AddHotels from './components/hotelOwner/AddHotels';
 
 
 
@@ -47,6 +53,18 @@ const routing = (
         <Route path="current-bookings" element={<CurrentBookings />} />
       </Route>
       <Route path="/post-review/:bookingId" element={<PostReview />} />
+      <Route path="/owner-register" element={<OwnerRegister />} />
+      <Route path="/owner-login" element={<OwnerLogin />} />
+      <Route path="/owner-dashboard" element={
+        <OwnerProtectedRoute>
+          <OwnerDashboard />
+        </OwnerProtectedRoute>
+      }>
+        {/* Nested routes */}
+        <Route path="update-owner-info" element={<UpdateOwnerInfo />} />
+        <Route path="add-hotels" element={<AddHotels />} />
+        <Route path="current-bookings" element={<CurrentBookings />} />
+      </Route>
 
     </Routes>
   </Router>

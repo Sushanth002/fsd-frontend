@@ -80,8 +80,7 @@ nav {
 }
 
 
-.login,
- .register {
+.go-to-dashboard {
   color: white;
   padding: 14px 16px;
   text-decoration: none;

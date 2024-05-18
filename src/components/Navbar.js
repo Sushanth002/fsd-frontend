@@ -25,11 +25,11 @@ const Navbar = () => {
         </li>
         
         <li className="dropdown">
-          <Link to="#" className="dropbtn">Hotel Owner Login</Link>
+          <Link to="/owner-login" className="dropbtn">Hotel Owner Login</Link>
 
           <div className="dropdown-content">
-            <Link to="/hotel-owner-register">Hotel Owner Register</Link>
-            <Link to="/hotel-owner-dashboard">Hotel Owner Dashboard</Link>
+            <Link to="/owner-register">Hotel Owner Register</Link>
+            <Link to="/owner-dashboard">Hotel Owner Dashboard</Link>
           </div>
         </li>
 
@@ -45,11 +45,9 @@ const Navbar = () => {
       </ul>
 
       <ul className="nav-links-right">
+       
         <li>
-          <Link to="/user-login" className="login">Login</Link>
-        </li>
-        <li>
-          <Link to="/user-register" className="register">Register</Link>
+          <Link to="/user-dashboard" className="go-to-dashboard">Dashboard</Link>
         </li>
 
 
