@@ -18,7 +18,9 @@ function OwnerDashboard() {
           <ul>
             <li><Link to="update-owner-info" className={styles.navLink}>Update Owner Info</Link></li>
             <li><Link to="add-hotels" className={styles.navLink}>Add Hotels</Link></li>
-            <li><Link to="get-my-hotels" className={styles.navLink}>Get My Hotels</Link></li>
+            <li><Link to="owner-hotels" className={styles.navLink}>Get My Hotels</Link></li>
+            <li><Link to="add-rooms" className={styles.navLink}>Add Rooms</Link></li>
+            <li><Link to="view-rooms" className={styles.navLink}>View Rooms</Link></li>
           </ul>
         </nav>
         <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>

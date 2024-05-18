@@ -23,6 +23,15 @@ import OwnerProtectedRoute from './components/hotelOwner/OwnerProtectedRoute';
 import OwnerDashboard from './components/hotelOwner/OwnerDashboard';
 import UpdateOwnerInfo from './components/hotelOwner/UpdateOwnerInfo';
 import AddHotels from './components/hotelOwner/AddHotels';
+import OwnerHotels from './components/hotelOwner/OwnerHotels';
+import UpdateHotel from './components/hotelOwner/UpdateHotel';
+import PastBookingsByHotel from './components/hotelOwner/PastBookingsByHotel';
+import CurrentBookingsByHotel from './components/hotelOwner/CurrentBookingsByHotel';
+import AddRooms from './components/hotelOwner/AddRooms';
+import AddRoomForm from './components/hotelOwner/AddRoomForm';
+import ViewRooms from './components/hotelOwner/ViewRooms';
+import ViewRoomsManage from './components/hotelOwner/ViewRoomsManage';
+import UpdateRoom from './components/hotelOwner/UpdateRoom';
 
 
 
@@ -42,6 +51,7 @@ const routing = (
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/user-register" element={<UserRegister />} />
       <Route path="/user-login" element={<UserLogin />} />
+
       <Route path="/user-dashboard" element={
         <UserProtectedRoute>
           <UserDashboard />
@@ -52,9 +62,11 @@ const routing = (
         <Route path="past-bookings" element={<PastBookings />} />
         <Route path="current-bookings" element={<CurrentBookings />} />
       </Route>
+
       <Route path="/post-review/:bookingId" element={<PostReview />} />
       <Route path="/owner-register" element={<OwnerRegister />} />
       <Route path="/owner-login" element={<OwnerLogin />} />
+      
       <Route path="/owner-dashboard" element={
         <OwnerProtectedRoute>
           <OwnerDashboard />
@@ -63,9 +75,18 @@ const routing = (
         {/* Nested routes */}
         <Route path="update-owner-info" element={<UpdateOwnerInfo />} />
         <Route path="add-hotels" element={<AddHotels />} />
-        <Route path="current-bookings" element={<CurrentBookings />} />
+        <Route path="owner-hotels" element={<OwnerHotels />} />
+        <Route path="add-rooms" element={<AddRooms />} />
+        <Route path="view-rooms" element={<ViewRooms />} />
+        
       </Route>
-
+      <Route path="update-hotel/:hotelId" element={<UpdateHotel />} />
+      <Route path="/past-bookings/:hotelId" element={<PastBookingsByHotel />} />
+      <Route path="/current-bookings/:hotelId" element={<CurrentBookingsByHotel />} />
+      <Route path="/add-room-form/:hotelId" element={<AddRoomForm />} />
+      <Route path="/view-rooms-manage/:hotelId" element={<ViewRoomsManage />} />
+      <Route path="/update-room/:roomId" element={<UpdateRoom />} />
+      
     </Routes>
   </Router>
 );
