@@ -6,8 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
-import Admin from './components/Admin';
-import AdminDashboard from './components/AdminDashboard';
+import AdminDashboard from './components/admin/AdminDashboard';
 import Navbar from './components/Navbar';
 import UserRegister from './components/user/UserRegister';
 import UserLogin from './components/user/UserLogin';
@@ -32,6 +31,11 @@ import AddRoomForm from './components/hotelOwner/AddRoomForm';
 import ViewRooms from './components/hotelOwner/ViewRooms';
 import ViewRoomsManage from './components/hotelOwner/ViewRoomsManage';
 import UpdateRoom from './components/hotelOwner/UpdateRoom';
+import AdminLogin from './components/admin/AdminLogin';
+import AdminProtectedRoute from './components/admin/AdminProtectedRoute';
+import AdminProfile from './components/admin/AdminProfile';
+import ManageUsers from './components/admin/ManageUsers';
+import ManageHotelOwners from './components/admin/ManageHotelOwners';
 
 
 
@@ -47,7 +51,20 @@ const routing = (
       <Route path="/" element={<App />} />
       <Route path="/About" element={<About />} />
       <Route path="/Contact" element={<Contact />} />
-      <Route path="/Admin" element={<Admin />} />
+      <Route path="/admin-login" element={<AdminLogin />} />
+
+
+      <Route path="/admin-dashboard" element={
+        <AdminProtectedRoute>
+          <AdminDashboard />
+        </AdminProtectedRoute>
+      }>
+        {/* Nested routes */}
+        <Route path="admin-profile" element={<AdminProfile />} />
+        <Route path="manage-users" element={<ManageUsers />} />
+        <Route path="manage-hotel-owners" element={<ManageHotelOwners />} />
+      </Route>
+
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/user-register" element={<UserRegister />} />
       <Route path="/user-login" element={<UserLogin />} />

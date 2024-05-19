@@ -1,0 +1,29 @@
+/* AdminProfile.module.css */
+
+.profileContainer {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .profileContainer h2 {
+    margin-bottom: 15px;
+  }
+  
+  .profileDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .profileDetails p {
+    margin: 0;
+  }
+  
+  .message {
+    color: #d9534f;
+    font-size: 1em;
+  }
+  

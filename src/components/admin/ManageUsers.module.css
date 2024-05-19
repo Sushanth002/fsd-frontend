@@ -1,0 +1,55 @@
+/* ManageUsers.module.css */
+
+.container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .message {
+    color: #d9534f;
+    font-size: 1em;
+  }
+  
+  .userList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: left;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    margin-top: 0;
+  }
+  
+  .card p {
+    margin: 5px 0;
+  }
+  
+  .deleteButton {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c9302c;
+  }
+  

@@ -15,7 +15,7 @@ const Navbar = () => {
       <ul className="nav-links">
         
         <li className="dropdown">
-          <Link to="/Admin" className="dropbtn">Admin Login</Link>
+          <Link to="/admin-login" className="dropbtn">Admin Login</Link>
 
           <div className="dropdown-content">
             <Link to="/admin-dashboard">Admin Dashboard</Link>
