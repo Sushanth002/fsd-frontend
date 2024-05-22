@@ -36,10 +36,10 @@ import AdminProtectedRoute from './components/admin/AdminProtectedRoute';
 import AdminProfile from './components/admin/AdminProfile';
 import ManageUsers from './components/admin/ManageUsers';
 import ManageHotelOwners from './components/admin/ManageHotelOwners';
-import SearchHotels from './SearchHotels';
-import SearchRooms from './SearchRooms';
-import BookRoom from './BookRoom';
-import HotelReviews from './HotelReviews';
+import SearchHotels from './components/common/SearchHotels';
+import SearchRooms from './components/common/SearchRooms';
+import BookRoom from './components/common/BookRoom';
+import HotelReviews from './components/common/HotelReviews';
 
 
 

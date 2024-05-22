@@ -1,6 +1,20 @@
 .app-container {
   text-align: center;
   padding: 20px;
+  /*background-image: url('../public/Images/bg.jpg');*/ 
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-container {
+  max-height: 500px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.carousel-container img {
+  max-height: 450px;
+  object-fit: cover;
 }
 
 .search-container {

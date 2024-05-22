@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import adminService from '../../services/admin.service';
 import styles from './AdminProfile.module.css';
 
 const AdminProfile = () => {
@@ -15,11 +16,9 @@ const AdminProfile = () => {
       }
 
       try {
-        const response = await axios.get(`http://localhost:3000/api/admin/dashboard/getadmin/${adminId}`,{
-            withCredentials: true 
-          });
-        if (response.status === 200 && response.data.success) {
-          setAdminDetails(response.data.data);
+        const data = await adminService.getAdminDetails(adminId);
+        if (data.success) {
+          setAdminDetails(data.data);
         } else {
           setMessage('Failed to fetch admin details');
         }

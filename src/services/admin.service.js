@@ -1,52 +1,35 @@
+
 import axios from 'axios';
 
-export let adminSericeObj =
-{
-    getAllDepartments,
-    getDeptById,
-    addDept,
-    updateDept,
-    deleteDept
+const API_URL = 'http://localhost:3000/api/admin';
+
+const adminService = {
+  login: async (email, password) => {
+    try {
+      const response = await axios.post(
+        `${API_URL}/login`,
+        { admin_email: email, admin_password: password },
+        { withCredentials: true }
+      );
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Login failed');
+    }
+  },
+
+  getAdminDetails: async (adminId) => {
+    try {
+      const response = await axios.get(`${API_URL}/dashboard/getadmin/${adminId}`, {
+        withCredentials: true
+      });
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Failed to fetch admin details');
+    }
+  }
+  
 };
 
-let url = "http://localhost:3000/api/admin/dashboard/";
-
-async function getToken() {
-    let authApiUrl = "http://localhost:3002/authapi/login";
-    let userObj = { "userName": "scott", "password": "scott123" }
-    let response = await axios.post(authApiUrl, userObj);
-    return response.data.token;
-}
-
-async function getAllUsers() {
-    const token = await getToken();
-    const config = {
-        headers: { Authorization: `Bearer ${token}` }
-    };
-    let resData = await axios.get(url, config);
-    return resData.data;
-}
+export default adminService;
 
 
-
-
-async function addDept(deptObj) {
-    let resData = await axios.post(url, deptObj);
-    return resData.data;
-}
-
-async function deleteDept(dno) {
-    let resData = await axios.delete(url + dno);
-    return resData.data;
-}
-
-
-async function getDeptById(dno) {
-    let resData = await axios.get(url + dno);
-    return resData.data;
-}
-
-async function updateDept(deptObj) {
-    let resData = await axios.put(url + deptObj.deptno, deptObj);
-    return resData.data;
-}

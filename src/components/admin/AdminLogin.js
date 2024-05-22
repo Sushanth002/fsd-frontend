@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
+import adminService from '../../services/admin.service';
 import { useNavigate } from 'react-router-dom';
 import styles from './AdminLogin.module.css';
 
@@ -37,16 +38,11 @@ const AdminLogin = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/api/admin/login', {
-        admin_email: email,
-        admin_password: password
-      },{
-        withCredentials: true // Include credentials in the request
-      });
+      const data = await adminService.login(email, password);
 
-      if (response.status === 200 && response.data.success) {
+      if (data.success) {
         alert('Admin logged in successfully');
-        sessionStorage.setItem('admin_id', response.data.data.admin_id);
+        sessionStorage.setItem('admin_id', data.data.admin_id);
         navigate('/admin-dashboard');
       } else {
         setMessage('Login failed. Please check your credentials and try again.');

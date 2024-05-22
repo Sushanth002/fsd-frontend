@@ -1,0 +1,23 @@
+.reviewsContainer {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .reviewCard {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .reviewCard p {
+    margin: 10px 0;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  

@@ -12,7 +12,6 @@ function App() {
   const [noOfRooms, setNoOfRooms] = useState('');
   const [errors, setErrors] = useState({});
 
-
   const validateForm = () => {
     const newErrors = {};
     if (!location) newErrors.location = 'Location is required';
@@ -41,15 +40,15 @@ function App() {
   return (
     <div className="app-container">
       <h2>Welcome to Cozy Haven Stay</h2>
-      <Carousel autoPlay infiniteLoop showThumbs={false}>
+      <Carousel autoPlay infiniteLoop showThumbs={false} className="carousel-container">
         <div>
-          <img src="/Images/Banner.jpg" alt="Carousel 1" />
+          <img src="Images/Banner.jpg" alt="Carousel 1" />
         </div>
         <div>
-          <img src="/Images/Banner.jpg" alt="Carousel 2" />
+          <img src="/Images/Image1.jpg" alt="Carousel 2" />
         </div>
         <div>
-          <img src="/Images/Banner.jpg" alt="Carousel 3" />
+          <img src="/Images/Image2.jpg" alt="Carousel 3" />
         </div>
       </Carousel>
 
