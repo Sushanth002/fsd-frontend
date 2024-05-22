@@ -1,0 +1,72 @@
+.bookingContainer {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .bookingForm {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .bookingForm h2 {
+    margin-bottom: 20px;
+  }
+  
+  .chargeField {
+    margin-bottom: 10px;
+  }
+  
+  .chargeField label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .chargeField input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.875em;
+  }
+  
+  .bookingDetails {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    width: 400px;
+  }
+  
+  .bookingDetails h2 {
+    margin-bottom: 20px;
+  }
+  
+  .bookingDetails p {
+    margin: 10px 0;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px 20px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

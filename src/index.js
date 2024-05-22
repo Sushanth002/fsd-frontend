@@ -36,6 +36,9 @@ import AdminProtectedRoute from './components/admin/AdminProtectedRoute';
 import AdminProfile from './components/admin/AdminProfile';
 import ManageUsers from './components/admin/ManageUsers';
 import ManageHotelOwners from './components/admin/ManageHotelOwners';
+import SearchHotels from './SearchHotels';
+import SearchRooms from './SearchRooms';
+import BookRoom from './BookRoom';
 
 
 
@@ -49,6 +52,9 @@ const routing = (
 
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="/search-hotels" element={<SearchHotels />} />
+      <Route path="/search-rooms/:hotel_id" element={<SearchRooms />} />
+      <Route path="/book-room" element={<BookRoom />} />
       <Route path="/About" element={<About />} />
       <Route path="/Contact" element={<Contact />} />
       <Route path="/admin-login" element={<AdminLogin />} />
