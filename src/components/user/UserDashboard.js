@@ -19,7 +19,7 @@ function UserDashboard() {
             <li><Link to="update-info" className={styles.navLink}>Update Info</Link></li>
             <li><Link to="past-bookings" className={styles.navLink}>Past Bookings</Link></li>
             <li><Link to="current-bookings" className={styles.navLink}>Current Bookings</Link></li>
-            <li><Link to="book-hotel" className={styles.navLink}>Book Hotel</Link></li>
+            <li><Link to="/" className={styles.navLink}>Book Hotel</Link></li>
           </ul>
         </nav>
         <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>

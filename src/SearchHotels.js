@@ -46,6 +46,9 @@ function SearchHotels() {
               checkoutDate: locationState.inputCheckoutDate
             }
           })}>View Rooms</button>
+           <button onClick={() => navigate(`/hotel-reviews/${hotel.hotel_id}`, {
+            state: { hotel_id: hotel.hotel_id }
+          })}>View Reviews</button>
         </div>
       ))}
     </div>

@@ -39,6 +39,7 @@ import ManageHotelOwners from './components/admin/ManageHotelOwners';
 import SearchHotels from './SearchHotels';
 import SearchRooms from './SearchRooms';
 import BookRoom from './BookRoom';
+import HotelReviews from './HotelReviews';
 
 
 
@@ -54,7 +55,12 @@ const routing = (
       <Route path="/" element={<App />} />
       <Route path="/search-hotels" element={<SearchHotels />} />
       <Route path="/search-rooms/:hotel_id" element={<SearchRooms />} />
-      <Route path="/book-room" element={<BookRoom />} />
+      <Route path="/book-room" element={
+        <UserProtectedRoute>
+          <BookRoom />
+          </UserProtectedRoute>
+      } />
+      <Route path="/hotel-reviews/:hotel_id" element={<HotelReviews />} />
       <Route path="/About" element={<About />} />
       <Route path="/Contact" element={<Contact />} />
       <Route path="/admin-login" element={<AdminLogin />} />
@@ -121,7 +127,5 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
